@@ -1,0 +1,43 @@
+[user]
+;	name = isdyy
+;	email = isdyy020202@gmail.com
+	name = k.ishida
+	email = k.ishida@gigei.jp
+
+[github]
+	user  = isdyy
+	email = k.ishida@gigei.jp
+
+[alias]
+	co = checkout
+	st = status
+	fo = fetch origin
+	ff = merge --ff-only
+	fetch-pulls = fetch origin +refs/pull/*:refs/remotes/origin/pull/*
+	log-graph = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+	;smup = submodule update
+	dc = diff --cached
+	dv = !sh -c 'git diff $* | view -' --
+	dcv = !sh -c 'git diff --cached $* | view -' --
+
+[core]
+;	autocrlf = input
+;	safecrlf = true
+
+[color]
+;	ui = auto
+;	diff = auto
+;
+[pull]
+	# from 1.7.9
+	rebase = true
+
+[push]
+	default = simple
+
+[merge]
+	# from 1.7.6;
+	# If set to false, we can not use merge --ff-only while if set to 'only'
+	# we can not use merge --no-ff.
+	#ff = false
+	defaultToUpstream = true
