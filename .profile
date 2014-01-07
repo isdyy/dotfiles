@@ -16,6 +16,7 @@ export GIT_PAGER='less -x4'
 export ANT_OPTS=-Dfile.encoding=UTF8
 
 # python
+export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # for vim-fakeclip
