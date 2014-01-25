@@ -15,7 +15,7 @@ install tree
 install ctags
 
 install gettext
-
+install parallel
 #install screen256
 
 install python
