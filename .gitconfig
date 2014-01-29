@@ -11,7 +11,7 @@
 [alias]
 	co = checkout
 	st = status
-	fo = fetch origin
+	fo = fetch origin --prune
 	ff = merge --ff-only
 	fetch-pulls = fetch origin +refs/pull/*:refs/remotes/origin/pull/*
 	log-graph = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
