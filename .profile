@@ -15,9 +15,6 @@ export MANPATH=$MANPATH:$HOMEBREW/share/man
 export GIT_PAGER='less -x4'
 export ANT_OPTS=-Dfile.encoding=UTF8
 
-# python
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
 
 # for vim-fakeclip
 export __CF_USER_TEXT_ENCODING='0x1F5:0x08000100:0'

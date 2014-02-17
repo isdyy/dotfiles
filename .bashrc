@@ -15,17 +15,12 @@ PS1='[\u@\h \W]\$ '
 #fi
 
 # Python
-if [ -s "$HOME/.pythonbrew/etc/bashrc" ]; then
-    source "$HOME/.pythonbrew/etc/bashrc"
-    alias mkvirtualenv="pythonbrew venv create"
-    alias rmvirtualenv="pythonbrew venv delete"
-    alias workon="pythonbrew venv use"
-    if [ "$USE_PYTHONBREW" != "" ]; then
-        pythonbrew use $USE_PYTHONBREW
-        if [ "$USE_VIRTUALENV" != "" ]; then
-            pythonbrew venv use $USE_VIRTUALENV
-        fi
-    fi
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  eval "$(pyenv init -)"
+  if [ "$PYENV_VERSION" != "" ]; then
+    pyenv shell $PYENV_VERSION
+  fi
 fi
 
 alias diff="diff -u"
