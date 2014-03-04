@@ -15,12 +15,9 @@ PS1='[\u@\h \W]\$ '
 #fi
 
 # Python
-if [ -d "$HOME/.pyenv" ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
+if [ "$PYENV_VERSION" != "" ]; then
   eval "$(pyenv init -)"
-  if [ "$PYENV_VERSION" != "" ]; then
-    pyenv shell $PYENV_VERSION
-  fi
+  pyenv shell $PYENV_VERSION
 fi
 
 alias diff="diff -u"
