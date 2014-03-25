@@ -15,6 +15,7 @@ install tree
 install ctags
 
 install gettext
+#link gettext --force
 install parallel
 #install screen256
 
