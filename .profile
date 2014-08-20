@@ -27,3 +27,9 @@ if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   eval "$(pyenv init -)"
 fi
+
+if [ -d "$WORKDIR/tmp/google-cloud-sdk" ]; then
+    source "$WORKDIR/tmp/google-cloud-sdk/path.bash.inc"
+    source "$WORKDIR/tmp/google-cloud-sdk/completion.bash.inc"
+fi
+
