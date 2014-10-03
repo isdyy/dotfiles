@@ -24,6 +24,7 @@ install pyenv
 install pyenv-virtualenv
 install ruby
 install node
+install ant
 
 # .dmg
 tap phinze/homebrew-cask
