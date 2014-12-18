@@ -28,9 +28,9 @@ if [ -d "$HOME/.pyenv" ]; then
   eval "$(pyenv init -)"
 fi
 
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#  . $(brew --prefix)/etc/bash_completion
-#fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 if [ -d "$WORKDIR/tmp/google-cloud-sdk" ]; then
     source "$WORKDIR/tmp/google-cloud-sdk/path.bash.inc"
