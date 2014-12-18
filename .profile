@@ -23,6 +23,10 @@ if [ -d "$HOME/Work" ]; then
     export WORKDIR=$HOME/Work
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   eval "$(pyenv init -)"

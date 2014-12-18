@@ -6,6 +6,7 @@ update
 install git
 install hub
 install coreutils
+install bash-completion
 
 install wget
 install tree

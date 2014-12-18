@@ -22,12 +22,6 @@ fi
 
 alias diff="diff -u"
 
-# git completion
-if [ -f "$HOME/.homebrew/etc/bash_completion.d/git-completion.bash" ]; then
-    source "$HOME/.homebrew/etc/bash_completion.d/git-completion.bash"
-fi
-
-
 function git-cd()
 {
     local d=$(git rev-parse --show-cdup)
