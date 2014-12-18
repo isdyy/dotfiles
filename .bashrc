@@ -2,12 +2,18 @@
 # User specific aliases and functions
 # vim:et ts=4 ff=unix:
 
+alias diff="diff -u"
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
 PS1='[\u@\h \W]\$ '
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 # source-highlight with custom settings
 #if [ -f "$HOME/.source-highlight/bashrc" ]; then
@@ -19,8 +25,6 @@ if [ "$PYENV_VERSION" != "" ]; then
   eval "$(pyenv init -)"
   pyenv shell $PYENV_VERSION
 fi
-
-alias diff="diff -u"
 
 function git-cd()
 {
