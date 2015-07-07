@@ -1,43 +1,40 @@
 # cd ~ && brew bundle
+# install: brew tap Homebrew/bundle
+# https://github.com/Homebrew/homebrew-bundle
 
-update
-#upgrade
+tap 'caskroom/cask'
 
-install git
-install hub
-install coreutils
-install bash-completion
+brew 'git'
+brew 'hub'
+brew 'coreutils'
+brew 'bash-completion'
 
-install wget
-install tree
-#install source-highlight
+brew 'wget'
+brew 'tree'
 
 # for vim taglist plugin
-install ctags
+brew 'ctags'
 
-install gettext
+brew 'gettext'
 #link gettext --force
-install parallel
-#install screen256
+brew 'parallel'
+#brew screen256
 
-install python
-install pyenv
-install pyenv-virtualenv
-install ruby
-install node
-install ant
+brew 'python'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
+brew 'ruby'
+brew 'node'
+brew 'ant'
 
 # .dmg
-tap phinze/homebrew-cask
-install brew-cask
 
-#cask install google-chrome
-#cask install firefox
-#cask install virtualbox
-#cask install vagrant
-#cask install iterm2
-#cask install dropbox
-#cask install skype
-#cask install adium
-
-cleanup
+cask 'google-chrome'
+cask 'google-cloud-sdk'
+cask 'firefox'
+cask 'virtualbox'
+#cask 'vagrant'
+cask 'iterm2'
+cask 'dropbox'
+cask 'skype'
+#cask 'adium'
