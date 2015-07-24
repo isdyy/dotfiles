@@ -19,5 +19,5 @@ done
 
 # vim
 if [ ! -d ${prefix}/.vim/bundle/vundle ]; then
-  git clone git://github.com/gmarik/vundle.git ${prefix}/.vim/bundle/vundle && vim +BundleInstall! +qall
+  git clone git@github.com:VundleVim/Vundle.vim ${prefix}/.vim/bundle/vundle && vim +BundleInstall! +qall
 fi

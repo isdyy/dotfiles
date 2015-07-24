@@ -65,8 +65,8 @@
 
   " Vundle Plugins
   Bundle 'gmarik/vundle'
-  Bundle "git://github.com/scrooloose/nerdtree.git"
-  Bundle "git://github.com/kana/vim-fakeclip.git"
+  Bundle "git@github.com:scrooloose/nerdtree.git"
+  Bundle "git@github.com:kana/vim-fakeclip.git"
   Bundle "vim-scripts/taglist.vim"
   Bundle "plasticboy/vim-markdown"
 
