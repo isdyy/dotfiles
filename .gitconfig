@@ -16,6 +16,7 @@
 	fetch-pulls = fetch origin +refs/pull/*:refs/remotes/origin/pull/*
 	empty-commit = commit --allow-empty --allow-empty-message
 	log-graph = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+	log-summary = log --pretty=format:'%ad %h %an %s' --date=short
 	;smup = submodule update
 	dc = diff --cached
 	dv = !sh -c 'git diff $* | view -' --
@@ -42,3 +43,7 @@
 	# we can not use merge --no-ff.
 	#ff = false
 	defaultToUpstream = true
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
