@@ -17,6 +17,8 @@
 	empty-commit = commit --allow-empty --allow-empty-message
 	log-graph = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
 	log-summary = log --pretty=format:'%ad %h %an %s' --date=short
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 	;smup = submodule update
 	dc = diff --cached
 	dv = !sh -c 'git diff $* | view -' --
