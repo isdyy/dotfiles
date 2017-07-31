@@ -11,6 +11,7 @@ brew 'bash-completion'
 
 brew 'wget'
 brew 'tree'
+brew 'screen'
 
 # for vim taglist plugin
 brew 'ctags'
@@ -38,4 +39,3 @@ cask 'virtualbox'
 cask 'iterm2'
 cask 'dropbox'
 cask 'skype'
-#cask 'adium'
