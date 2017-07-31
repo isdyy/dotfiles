@@ -82,7 +82,7 @@
 
 " Basics {{{
 
-  filetype plugin on
+  "filetype plugin on
 
   set modeline
   set modelines=5

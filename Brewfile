@@ -25,11 +25,12 @@ brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'ruby'
 brew 'node'
+#cask 'java'
 brew 'ant'
 
 # .dmg
 
-cask 'google-chrome'
+#cask 'google-chrome'
 cask 'google-cloud-sdk'
 cask 'firefox'
 cask 'virtualbox'
