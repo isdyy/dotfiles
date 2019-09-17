@@ -32,7 +32,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-if [ -d "$WORKDIR/tmp/google-cloud-sdk" ]; then
-    source "$WORKDIR/tmp/google-cloud-sdk/path.bash.inc"
-    source "$WORKDIR/tmp/google-cloud-sdk/completion.bash.inc"
+if [ -d "$HOME/google-cloud-sdk" ]; then
+    source "$HOME/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+    source "$HOME/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 fi
