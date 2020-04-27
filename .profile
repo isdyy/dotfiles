@@ -33,6 +33,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 if [ -d "$HOME/google-cloud-sdk" ]; then
+    export CLOUDSDK_PYTHON=/usr/bin/python2.7
     source "$HOME/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
     source "$HOME/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 fi
