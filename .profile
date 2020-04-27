@@ -34,6 +34,11 @@ fi
 
 if [ -d "$HOME/google-cloud-sdk" ]; then
     export CLOUDSDK_PYTHON=/usr/bin/python2.7
-    source "$HOME/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
-    source "$HOME/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+
+    # The next line updates PATH for the Google Cloud SDK.
+    if [ -f '/Users/k.ishida/google-cloud-sdk/path.bash.inc' ]; then . '/Users/k.ishida/google-cloud-sdk/path.bash.inc'; fi
+    # The next line enables shell command completion for gcloud.
+    if [ -f '/Users/k.ishida/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/k.ishida/google-cloud-sdk/completion.bash.inc'; fi
 fi
+
+
