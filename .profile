@@ -40,5 +40,3 @@ if [ -d "$HOME/google-cloud-sdk" ]; then
     # The next line enables shell command completion for gcloud.
     if [ -f '/Users/k.ishida/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/k.ishida/google-cloud-sdk/completion.bash.inc'; fi
 fi
-
-
