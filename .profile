@@ -25,7 +25,7 @@ fi
 
 if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
