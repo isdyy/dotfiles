@@ -34,7 +34,7 @@ fi
 
 if [ -d "$HOME/google-cloud-sdk" ]; then
     # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/k.ishida/google-cloud-sdk/path.bash.inc' ]; then . '/Users/k.ishida/google-cloud-sdk/path.bash.inc'; fi
+    if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
     # The next line enables shell command completion for gcloud.
-    if [ -f '/Users/k.ishida/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/k.ishida/google-cloud-sdk/completion.bash.inc'; fi
+    if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
 fi
