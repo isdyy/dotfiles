@@ -9,7 +9,11 @@ fi
 # User specific environment and startup programs
 
 export LANG=ja_JP.UTF-8
-export HOMEBREW=~/.homebrew
+if [ -d "$HOME/.homebrew" ]; then
+  HOMEBREW=~/.homebrew
+elif [ -d "/opt/homebrew" ]; then
+  HOMEBREW=/opt/homebrew
+fi
 export PATH=$HOME/bin:$HOME/.pyenv/bin:$HOMEBREW/bin:$HOMEBREW/share/python:$HOMEBREW/share/npm/bin:$HOMEBREW/opt/ruby/bin:$PATH
 export MANPATH=$MANPATH:$HOMEBREW/share/man
 export GIT_PAGER='less -x4'
