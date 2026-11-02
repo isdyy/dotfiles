@@ -1,44 +1,23 @@
-# cd ~ && brew bundle
-# install: brew tap Homebrew/bundle
-# https://github.com/Homebrew/homebrew-bundle
+brew "git"
+brew "gh"
+brew "jq"
+brew "tree"
+brew "wget"
 
-tap 'homebrew/cask'
+brew "bash-completion" # for  bash 3.2 (macOS)
+brew "screen"
+brew "universal-ctags"
 
-brew 'git'
-#brew 'hub'
-brew 'coreutils'
-brew 'bash-completion'
+brew "pyenv-virtualenv"
+brew "openjdk@11"
+brew "ant"
+brew "gradle"
 
-brew 'wget'
-brew 'tree'
-brew 'screen'
-brew 'jq'
+# brew "node"
+# brew "go"
+# brew "parallel"
+# brew "tnftp"
 
-# for vim taglist plugin
-brew 'ctags'
-
-brew 'gettext', link: true
-brew 'parallel'
-#brew screen256
-
-brew 'python'
-brew 'pyenv'
-brew 'pyenv-virtualenv'
-#brew 'ruby'
-#brew 'node'
-brew 'openjdk@11', link: true
-brew 'ant'
-
-# .dmg
-
-#cask 'google-chrome'
-#cask 'google-cloud-sdk'
-#cask 'firefox'
-#cask 'virtualbox'
-#cask 'vagrant'
-#cask 'iterm2'
-#cask 'dropbox'
-#cask 'skype'
-cask 'docker'
-cask 'zoom'
-cask 'microsoft-teams'
+# cask "docker-desktop"
+# cask "zoom"
+# cask "microsoft-teams"

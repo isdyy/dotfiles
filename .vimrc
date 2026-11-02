@@ -2,7 +2,7 @@
 
 " Cheatsheet {{{
 "   \n              - [custom] Toggle NERDTree
-"   \l              - [custom] Toggle taglist
+"   \l              - [custom] Toggle tagbar
 "
 "   :sh             - Shell
 "   :! {Cmd}        - Execute {Cmd}
@@ -42,40 +42,31 @@
 "
 " }}}
 
-" Setup Vundle {{{
-  " https://github.com/gmarik/vundle
+" Setup vim-plug {{{
+  " https://github.com/junegunn/vim-plug
   "
-  " Brief help
-  " :BundleList          - list configured bundles
-  " :BundleInstall(!)    - install(update) bundles
-  " :BundleSearch(!) foo - search(or refresh cache first) for foo
-  " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-  "
-  " see :h vundle for more details or wiki for FAQ
-
-  " Enable filetype before disabling as a workaround for vim on Mac OS X
-  " (Prevent vim exiting with non-zero status code)
-  " https://github.com/gmarik/vundle/pull/53
-  filetype on
+  " :PlugInstall  - install plugins
+  " :PlugUpdate   - update plugins
+  " :PlugClean    - remove unlisted plugins
 
   set nocompatible
-  filetype off
-  set rtp+=~/.vim/bundle/vundle
-  call vundle#rc()
 
-  " Vundle Plugins
-  Bundle 'gmarik/vundle'
-  Bundle "git@github.com:scrooloose/nerdtree.git"
-  Bundle "git@github.com:kana/vim-fakeclip.git"
-  Bundle "vim-scripts/taglist.vim"
-  Bundle "plasticboy/vim-markdown"
+  let s:plug = expand('~/.vim/autoload/plug.vim')
+  if !filereadable(s:plug)
+    silent execute '!curl -fsLo ' . s:plug . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  endif
 
-  " Colorschemes
-  Bundle "vim-scripts/Color-Sampler-Pack"
-  Bundle "vim-scripts/newspaper.vim"
-  Bundle "altercation/vim-colors-solarized"
+  call plug#begin('~/.vim/bundle')
+  Plug 'preservim/nerdtree'
+  Plug 'preservim/tagbar'
+  Plug 'preservim/vim-markdown'
+  Plug 'kana/vim-fakeclip'
+  call plug#end()
 
-  "filetype plugin indent on
+  " Install missing plugins on startup
+  autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \| PlugInstall --sync | source $MYVIMRC
+    \| endif
 
 " }}}
 
@@ -91,6 +82,7 @@
   set tabstop=4
   "set expandtab
   set noexpandtab
+  let g:python_recommended_style = 0
   set hlsearch
   "set nohlsearch
   set nowrap
@@ -143,17 +135,7 @@
 
   set background=light
 
-  if has("gui_running")
-    "let g:solarized_termcolors=256
-    "colorscheme solarized
-
-    colorscheme lucius
-    "colorscheme nuvola
-    "colorscheme wombat256
-    "colorscheme zenburn
-  else
-    colorscheme custom
-  endif
+  colorscheme custom
 
   set colorcolumn=80,100
   "setl colorcolumn=80,100
@@ -174,14 +156,13 @@
 
 " ctags {{{
 
-  set tags=tags
-  let Tlist_Ctags_Cmd = "$HOMEBREW/bin/ctags"
-  let Tlist_Show_One_File = 1
-  let Tlist_Use_Right_Window = 1
-  let Tlist_Exit_OnlyWindow = 1
+  set tags=./tags;,tags;
+  let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
+  let g:tagbar_sort = 0
+  let g:tagbar_compact = 1
 
-  " http://yuku-tech.hatenablog.com/entry/20111012/1318416494
-  let g:tlist_javascript_settings = 'javascript;c:class;m:method;F:function;p:property'
+  let g:vim_markdown_folding_disabled = 1
+
 " }}}
 
 " Hooks {{{
@@ -198,8 +179,8 @@
   " Open NERDTree by \n
   nmap <Leader>n :NERDTreeToggle<CR>
 
-  " Toggle taglist
-  nmap <silent> <Leader>l :TlistToggle<CR>
+  " Toggle tagbar
+  nmap <silent> <Leader>l :TagbarToggle<CR>
 
   " Tab
   nnoremap <C-n> gt
