@@ -11,21 +11,18 @@ fi
 
 PS1='[\u@\h \W]\$ '
 
-if [ $(which brew) ]; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
+if [ -n "$HOMEBREW_PREFIX" ]; then
+    if [ -f "$HOMEBREW_PREFIX/etc/bash_completion" ]; then
+        . "$HOMEBREW_PREFIX/etc/bash_completion"
+    fi
+    if [ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.bash.inc" ]; then
+        . "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.bash.inc"
+    fi
 fi
 
-# source-highlight with custom settings
-#if [ -f "$HOME/.source-highlight/bashrc" ]; then
-#   . $HOME/.source-highlight/bashrc
-#fi
-
 # Python
-if [ "$PYENV_VERSION" != "" ]; then
-  eval "$(pyenv init -)"
-  pyenv shell $PYENV_VERSION
+if command -v pyenv >/dev/null; then
+    eval "$(pyenv init -)"
 fi
 
 function git-cd()
@@ -62,4 +59,3 @@ function git-unstash-all()
     git rm --cached `cat $gftu`
     rm $gftu
 }
-export PATH="$HOME/.local/bin:$PATH"

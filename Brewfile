@@ -18,6 +18,7 @@ brew "gradle"
 # brew "parallel"
 # brew "tnftp"
 
+cask "gcloud-cli"
 # cask "docker-desktop"
 # cask "zoom"
 # cask "microsoft-teams"
