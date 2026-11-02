@@ -29,6 +29,7 @@
 ;	safecrlf = true
 
 [color]
+	ui = false
 ;	ui = auto
 ;	diff = auto
 ;

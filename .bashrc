@@ -62,3 +62,4 @@ function git-unstash-all()
     git rm --cached `cat $gftu`
     rm $gftu
 }
+export PATH="$HOME/.local/bin:$PATH"
