@@ -10,6 +10,7 @@ if [ -x /opt/homebrew/bin/brew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH="$PATH:$HOME/.docker/bin"
 export GIT_PAGER='less -x4'
 export ANT_OPTS=-Dfile.encoding=UTF8
 
